@@ -4,6 +4,12 @@ matrix:
   bazel: [7.x, 8.x] 
 
 tasks:
+  verify_windows_targets:
+    name: Verify windows build and test targets
+    platform: windows
+    bazel: ${{ bazel }}
+    build_targets:
+    - '@glfw//:glfw'
   verify_linux_targets:
     name: Verify linux build and test targets
     platform: ${{ linux_platform }}

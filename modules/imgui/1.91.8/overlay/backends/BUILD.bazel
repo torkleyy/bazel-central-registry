@@ -14,13 +14,8 @@ cc_library(
         ],
         "//conditions:default": [],
     }),
-    # TODO: Remove this section after adding Windows support to @glfw:
-    # https://registry.bazel.build/modules/glfw
-    target_compatible_with = select({
-        "@platforms//os:osx": [],
-        "@platforms//os:linux": [],
-        "//conditions:default": ["@platforms//:incompatible"],
-    }),
+    # Windows support added to @glfw; no platform restrictions needed
+
     deps = [
         "//:imgui",
         "@glfw",
